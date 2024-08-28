@@ -3,38 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Webpage</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Subscribe to My YouTube Channel</title>
+    <script src="https://apis.google.com/js/platform.js"></script>
 </head>
 <body>
-    <header>
-        <h1>Welcome to My Responsive Webpage</h1>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    <!-- Subscribe Link -->
+    <a href="#" id="subscribe-link">Subscribe to my Channel</a>
 
-    <main>
-        <section id="home">
-            <h2>Home</h2>
-            <p>This is the home section.</p>
-        </section>
-        <section id="about">
-            <h2>About</h2>
-            <p>This is the about section.</p>
-        </section>
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>This is the contact section.</p>
-        </section>
-    </main>
+    <!-- YouTube Subscribe Button (hidden initially) -->
+    <div id="yt-subscribe" style="display:none;">
+        <div class="g-ytsubscribe" 
+             data-channelid="YOUR_CHANNEL_ID" 
+             data-layout="default" 
+             data-theme="dark" 
+             data-count="default"></div>
+    </div>
 
-    <footer>
-        <p>&copy; 2024 My Responsive Webpage</p>
-    </footer>
+    <script>
+        const subscribeLink = document.getElementById('subscribe-link');
+        const ytSubscribe = document.getElementById('yt-subscribe');
+
+        subscribeLink.addEventListener('click', function(event) {
+            event.preventDefault();
+            ytSubscribe.style.display = 'block';  // Show the subscribe button when the link is clicked
+        });
+    </script>
 </body>
 </html>
